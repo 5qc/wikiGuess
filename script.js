@@ -1,7 +1,7 @@
-/* window.addEventListener("load", function() {
+window.addEventListener("load", function() {
     const loader = document.querySelector(".loader");
     loader.className += " fade-out";
-}); */
+}); 
 
 $(document).ready(function() {
     // Some Stuff
@@ -14,6 +14,19 @@ $(document).ready(function() {
             $("#game").addClass("fade-in").removeClass("hide");
         }, 1000);
     });
+    $("#how-to").click(function() {
+        $("#intro").addClass("fade-out");
+        setTimeout(function() {
+            $("#instructions").addClass("fade-in").removeClass("hide");
+        }, 1000);
+    })
+    $("#how-to-back").click(function() {
+        $("#instructions").addClass("fade-out").removeClass("fade-in");
+        setTimeout(function() {
+            $("#intro").addClass("fade-in").removeClass("fade-out");
+            $("#instructions").addClass("hide").removeClass("fade-in fade-out");
+        }, 1000);
+    })
 
     // Actual Game
     $.getJSON("data.json", function(data) {
@@ -111,21 +124,23 @@ $(document).ready(function() {
                             
                                 setTimeout(function() {
                                     $(".result").addClass("fade-out");
+                                    item = "";
+                                    item = what();
+                                    img = "";
+                                    img  = "https://www.wikihow.com/images/" + item["img"];
+                                    ans = "";
+                                    ans  = item["answer"];
+                                    selectThem();
+                                    $(".image").attr("src", img);
     
                                     setTimeout(function() {
-                                        item = "";
-                                        item = what();
-                                        img = "";
-                                        img  = "https://www.wikihow.com/images/" + item["img"];
-                                        ans = "";
-                                        ans  = item["answer"];
-                                        selectThem();
-                                        $(".image").attr("src", img);
-                                        $(".correct-answer").html(ans)
-    
                                         $(".result").addClass("hide");
                                         $(".guess").removeClass("remove fade-out[0.5]").addClass("fade-in");
-                                        $("#input").val("")
+                                        $("#input").val("");
+
+                                        setTimeout(function() {
+                                            $(".correct-answer").html(ans);
+                                        }, 100);
                                     }, 1000);
                                 }, 3000);
                             }, 1000);
