@@ -42,7 +42,7 @@ $(document).ready(function() {
             return "https://www.wikihow.com/images/" + link;
         }
         function selectThem() {
-            var selection = "#select1, #select2, #select3, #select4, #select5, #select6, #select7, #select8, #select9, #select10, #select11, #select12, #select13, #select14, #select15, #select16, #select17, #select18, #select19, #select20, #select21";
+            var selection = "#select1, #select2, #select3, #select4, #select5, #select6, #select7, #select8, #select9, #select10, #select11, #select12, #select13, #select14, #select15, #select16, #select17, #select18, #select19, #select20, #select21, #select22, #select23, #select24, #select25";
             $(selection).hide();
             if (item["img2"] !== undefined) {$("#select1, #select2").show();}
             if (item["img3"] !== undefined) {$("#select3").show();}
@@ -64,6 +64,10 @@ $(document).ready(function() {
             if (item["img19"] !== undefined) {$("#select19").show();}
             if (item["img20"] !== undefined) {$("#select20").show();}
             if (item["img21"] !== undefined) {$("#select21").show();}
+            if (item["img22"] !== undefined) {$("#select22").show();}
+            if (item["img23"] !== undefined) {$("#select23").show();}
+            if (item["img24"] !== undefined) {$("#select24").show();}
+            if (item["img25"] !== undefined) {$("#select25").show();}
             $("#select1").click(function() {$(".image").attr("src", img);});
             $("#select2").click(function() {$(".image").attr("src", image(item["img2"]));});
             $("#select3").click(function() {$(".image").attr("src", image(item["img3"]));});
@@ -85,6 +89,10 @@ $(document).ready(function() {
             $("#select19").click(function() {$(".image").attr("src", image(item["img19"]));});
             $("#select20").click(function() {$(".image").attr("src", image(item["img20"]));});
             $("#select21").click(function() {$(".image").attr("src", image(item["img21"]));});
+            $("#select22").click(function() {$(".image").attr("src", image(item["img22"]));});
+            $("#select23").click(function() {$(".image").attr("src", image(item["img23"]));});
+            $("#select24").click(function() {$(".image").attr("src", image(item["img24"]));});
+            $("#select25").click(function() {$(".image").attr("src", image(item["img25"]));});
         }
 
         var item = what();
