@@ -1,6 +1,9 @@
 window.addEventListener("load", function() {
     const loader = document.querySelector(".loader");
     loader.className += " fade-out";
+    setTimeout(function() {
+        $(".loader").remove();
+    }, 1000);
 }); 
 
 $(document).ready(function() {
