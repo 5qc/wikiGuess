@@ -43,6 +43,13 @@ button {
     &:focus {
         outline: none;
     }
+
+    &.stop-game {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 215%;
+    }
 }
 textarea {
     width: 100%;
@@ -174,6 +181,10 @@ textarea {
     div {
         width: 100%;
     }
+}
+
+#points {
+    font-size: 150%;
 }
 
 @font-face {
