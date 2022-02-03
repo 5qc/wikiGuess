@@ -1,0 +1,165 @@
+@import "scss/animations";
+
+$font: sans-serif;
+$mono: monospace;
+
+body {
+    font-family: $font;
+}
+
+button {
+    background: #93b874;
+    border-radius: 5px;
+    border: none;
+    transition: 0.25s background;
+    padding: 10px;
+    font-size: 100%;
+    color: white;
+
+    &:hover {
+        background: lighten(#93b874, 10%);
+        transition: 0.25s background;
+        cursor: pointer;
+    }
+    &:active {
+        background: darken(#93b874, 5%);
+        transition: 0.25s background;
+    }
+    &:focus {
+        outline: none;
+    }
+}
+textarea {
+    width: 100%;
+    resize: none;
+    font-size: 150%;
+    font-family: $font;
+    text-align: center;
+    background: #f8f8f8;
+    color: black;
+    border: 1px solid darken(#f8f8f8, 25%);
+    border-radius: 15px;
+    transition: 0.25s border-radius, 0.25s background;
+
+    &:hover {
+        background: lighten(#f8f8f8, 10%);
+        transition: 0.25s border-radius, 0.25s background;
+    }
+    &:focus {
+        outline: none;
+        border-radius: 5px;
+        background: darken(#f8f8f8, 5%);
+        transition: 0.25s border-radius, 0.25s background;
+    }
+}
+
+.big {
+    font-size: 125%;
+}
+.bold {
+    font-weight: bold;
+}
+
+.font {
+    font-family: "font";
+    color: #444F45;
+}
+.green {
+    color: #93B873;
+}
+
+.hide {
+    display: none !important;
+}
+.opacity\[0\] {
+    opacity: 0;
+}
+
+.center {
+    text-align: center;
+}
+
+.centered[absolute] {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.image-select {
+    text-align: center;
+    margin-bottom: 5px;
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    font-family: $mono;
+    font-size: 115%;
+
+    .select {
+        $size: 20px;
+
+        display: inline-block;
+        width: $size;
+        height: $size;
+        padding: 2px;
+        border-radius: 50%;
+        border: 1px solid #000;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+.image {
+    height: 400px;
+    transition: 0.25s box-shadow;
+
+    &:hover {
+        box-shadow: 0px 0px 5px #333;
+        transition: 0.25s box-shadow;
+    }
+}
+
+.guess {
+    z-index: 1;
+    text-align: center;
+}
+.result {
+    z-index: 5;
+    text-align: center;
+    font-size: 150%;
+    
+    div {
+        width: 100%;
+    }
+}
+
+@font-face {
+    font-family: "font";
+    font-weight: normal;
+    font-style: normal;
+    src: url("fonts/texgyrebonum-regular.woff") format("woff"),
+         url("fonts/texgyrebonum-regular.woff2") format("woff2")
+}
+@font-face {
+    font-family: "font";
+    font-weight: normal;
+    font-style: italic;
+    src: url("fonts/texgyrebonum-italic.woff") format("woff"),
+         url("fonts/texgyrebonum-italic.woff2") format("woff2");
+}
+@font-face {
+    font-family: "font";
+    font-weight: bold;
+    font-style: normal;
+    src: url("fonts/texgyrebonum-bold.woff") format("woff"),
+         url("fonts/texgyrebonum-bold.woff2") format("woff2");
+}
+@font-face {
+    font-family: "font";
+    font-weight: bold;
+    font-style: italic;
+    src: url("fonts/texgyrebonum-bolditalic.woff") format("woff"),
+         url("fonts/texgyrebonum-bolditalic.woff2") format("woff2")
+}
