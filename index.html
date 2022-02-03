@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+    <head>
+        <title>wikiGuess - Guess wikiHow articles based on a picture</title>
+
+        <link rel="stylesheet" href="style.css" />
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="script.js"></script>
+    </head>
+
+    <body>
+        <div class="centered intro center hide" id="intro" absolute>
+            <span class="font bold" style="font-size:500%;">wiki<span class="green">Guess</span></span><br />
+            <button id="start">Start</button>
+            <button id="how-to">How To</button>
+        </div>
+
+        <div id="game" class="">
+            <div class="guess centered" id="guess" absolute>
+                <div class="image-select">
+                    <div class="select" id="select1">1</div>
+                    <div class="select" id="select2">2</div>
+                    <div class="select" id="select3">3</div>
+                    <div class="select" id="select4">4</div>
+                    <div class="select" id="select5">5</div>
+                    <div class="select" id="select6">6</div>
+                    <div class="select" id="select7">7</div>
+                    <div class="select" id="select8">8</div>
+                    <div class="select" id="select9">9</div>
+                    <div class="select" id="select10">10</div>
+                    <div class="select" id="select11">11</div>
+                    <div class="select" id="select12">12</div>
+                    <div class="select" id="select13">13</div>
+                    <div class="select" id="select14">14</div>
+                    <div class="select" id="select15">15</div>
+                    <div class="select" id="select16">16</div>
+                    <div class="select" id="select17">17</div>
+                    <div class="select" id="select18">18</div>
+                    <div class="select" id="select19">19</div>
+                    <div class="select" id="select20">20</div>
+                    <div class="select" id="select21">21</div>
+                </div>
+                <img class="image" src="" />
+                <br />
+                <textarea id="input" rows="1"></textarea>
+            </div>
+            <div class="result centered hide" id="result" absolute>
+                <div class="big bold your-answer-text">Your Answer:</div>
+                <div class="your-answer"></div>
+                <br />
+                <div class="big bold correct-answer-text">Correct Answer:</div>
+                <div class="correct-answer"></div>
+            </div>
+        </div>
+    </body>
+</html>
