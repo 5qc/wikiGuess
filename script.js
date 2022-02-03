@@ -33,6 +33,8 @@ $(document).ready(function() {
 
     // Actual Game
     $.getJSON("data.json", function(data) {
+        var points = 0;
+
         function what() {
             return data[Math.floor(Math.random() * data.length)]
         }
@@ -95,11 +97,27 @@ $(document).ready(function() {
         selectThem();
 
         // Key Press Code (And Reset)
+        $("#start").click(function() {
+            item = "";
+            item = what();
+            img = "";
+            img  = "https://www.wikihow.com/images/" + item["img"];
+            ans = "";
+            ans  = item["answer"];
+            selectThem();
+            $(".image").attr("src", img);
+            $(".correct-answer").html(ans);
+        })
+
         $("#input").keypress(function(event) {
             var keycode = (event.keyCode ? event.keyCode : event.which);
             var val = $("#input").val().replace("\n", "");
             if (keycode == 13) {
-                answer = $("#input").val().replace(/^how to /gi, "");
+                answer = $("#input").val().replace(/^how to /gi, "").toLowerCase();
+
+                if (answer == item["answer"].toLowerCase()) {
+                    points += 1;
+                }
 
                 $(".your-answer").html(answer);
                 $(".your-answer, .correct-answer-text, .correct-answer").removeClass("fade-in");
@@ -111,6 +129,7 @@ $(document).ready(function() {
     
                 $("#guess").addClass("fade-out[0.5]");
                 $(".your-answer, .correct-answer-text, .correct-answer").addClass("opacity[0]");
+
                 setTimeout(function() {
                     $("#guess").addClass("remove");
                     $("#result").addClass("fade-in[0.5]");
@@ -151,6 +170,39 @@ $(document).ready(function() {
                     }, 1000);
                 }, 500);
             }
+        });
+
+        // Stop game when button is clicked
+        $("#stop-game").click(function() {
+            if (points == 1) {
+                $("#points").html(points + " point");
+            } else {
+                $("#points").html(points + " points");
+            }
+
+            $("#game").addClass("fade-out");
+            setTimeout(function() {
+                $("#game").addClass("hide").removeClass("fade-out");
+                $("#game-results").removeClass("hide").addClass("fade-in");
+
+                setTimeout(function() {
+                    $("#game-results").removeClass("fade-in");
+                }, 1000);
+            }, 1000);
+        });
+        $("#play-again").click(function() {
+            points = 0;
+
+            $("#game-results").addClass("fade-out");
+            $("#intro").removeClass("fade-out").addClass("hide");
+            setTimeout(function() {
+                $("#game-results").removeClass("fade-out").addClass("hide");
+                $("#intro").addClass("fade-in").removeClass("hide");
+
+                setTimeout(function() {
+                    $("#intro").removeClass("fade-in");
+                }, 1000);
+            }, 1000);
         });
     });
 });
