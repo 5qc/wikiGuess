@@ -1,7 +1,21 @@
 <!doctype html>
-<html>
+<html lang="en">
     <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="https://www.wikihow.com/favicon.ico" />
+
         <title>wikiGuess - Guess wikiHow articles based on a picture</title>
+
+        <link rel="canonnical" href="https://wikiguess.glitch.me" />
+        <meta name="description" content="Guess wikiHow based on images the article contains." />
+        <meta name="robots" content="index,follow" />
+        <meta property="og:title" content="wikiGuess" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://wikiguess.glitch.me/" />
+        <meta property="og:description" content="Guess wikiHow based on images the article contains." />
+        <meta property="og:image" content="" />
+        <meta name="twitter:card" content="summary" />
 
         <link rel="stylesheet" href="style.css" />
 
@@ -10,13 +24,18 @@
     </head>
 
     <body>
-        <div class="centered intro center hide" id="intro" absolute>
+        <div class="loader">
+            <div class="loader-wordmark font bold" style="font-size:400%;">wiki<span class="green">Guess</span></div>
+            <div class="loader-anim spin[2s,infinite]"></div>
+        </div>
+
+        <div class="centered intro center" id="intro" absolute>
             <span class="font bold" style="font-size:500%;">wiki<span class="green">Guess</span></span><br />
             <button id="start">Start</button>
             <button id="how-to">How To</button>
         </div>
 
-        <div id="game" class="">
+        <div id="game" class="hide">
             <div class="guess centered" id="guess" absolute>
                 <div class="image-select">
                     <div class="select" id="select1">1</div>
@@ -52,6 +71,29 @@
                 <div class="big bold correct-answer-text">Correct Answer:</div>
                 <div class="correct-answer"></div>
             </div>
+        </div>
+
+        <div id="instructions" class="how-to centered hide" absolute>
+            <h1 class="center">How To Play:</h1>
+            <p>
+                The game will provide you with an image (or more). Your goal is to type in the box what
+                you think the wikiHow article these images are referencing. If you get it right, you'll
+                get a point. If you get it wrong, you'll get no points.
+            </p>
+            <p>
+                The game goes on for an infinite amount of time, and you can finish the game whenever.
+                To do that, click the button at the top right that says "Stop". Upon clicking that,
+                the results of the game will show.
+            </p>
+            <p>
+                And that's the basics of the game. Now enjoy! :)
+            </p>
+            <p class="center">
+                Made with ❤️ by <a href="//twitter.com/roc0ast3r" target="_blank">roc0ast3r</a>.
+            </p>
+            <p class="center">
+                <button class="button center" id="how-to-back">Back</button>
+            </p>
         </div>
     </body>
 </html>
